@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贺佳 - 个人主页</title>
+  <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+  <style type="text/tailwindcss">
+    @theme {
+      --color-primary: #165DFF;      
+      --color-secondary: #722ED1;   
+      --color-accent: #FF7D00;       
+      --color-success: #00B42A;     
+      --color-dark: #1D2939;
+      --color-light: #F9FAFB;
+      --font-inter: 'Inter', sans-serif;
+    }
+    
+    @utility fade-in {
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    @utility progress-animate {
+      animation: progress 1.5s ease-out;
+    }
+    
+    @keyframes progress {
+      from { width: 0; }
+      to { width: var(--width, 100%); }
+    }
+  </style>
+</head>
+<body class="font-inter bg-light text-dark min-h-screen flex flex-col">
+  <!-- 导航栏 -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm shadow-sm transition-all duration-300" id="navbar">
+    <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-primary">贺佳</a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="hover:text-accent transition">关于我</a>
+        <a href="#education" class="hover:text-accent transition">教育背景</a>
+        <a href="#skills" class="hover:text-accent transition">技能特长</a>
+        <a href="#experience" class="hover:text-accent transition">实践经历</a>
+        <a href="#interests" class="hover:text-accent transition">兴趣爱好</a>
+      </div>
+      <button class="md:hidden text-dark" id="menuBtn">
+        <i class="fas fa-bars text-2xl"></i>
+      </button>
+    </nav>
+    <!-- 移动端菜单 -->
+    <div class="md:hidden hidden bg-white border-t" id="mobileMenu">
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a href="#about" class="py-2 hover:text-accent transition">关于我</a>
+        <a href="#education" class="py-2 hover:text-accent transition">教育背景</a>
+        <a href="#skills" class="py-2 hover:text-accent transition">技能特长</a>
+        <a href="#experience" class="py-2 hover:text-accent transition">实践经历</a>
+        <a href="#interests" class="py-2 hover:text-accent transition">兴趣爱好</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 主内容区 -->
+  <main class="flex-grow container mx-auto px-4 py-8">
+    <!-- 英雄区 -->
+    <section id="hero" class="flex flex-col md:flex-row items-center gap-8 py-12 fade-in bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-6 md:p-10">
+      <div class="md:w-1/2">
+        <h1 class="text-[clamp(2rem,5vw,3.5rem)] font-bold mb-4 text-primary">贺佳</h1>
+        <p class="text-lg text-gray-600 mb-6">通信软件技术专业 | <span class="text-accent">学习能力强</span> | 团队协作爱好者</p>
+        <div class="flex space-x-4">
+          <a href="tel:+8618193469845" class="flex items-center bg-primary text-white px-6 py-3 rounded-lg hover:bg-primary/90 hover:shadow-lg transition transform hover:-translate-y-1">
+            <i class="fas fa-phone-alt mr-2"></i> 联系我
+          </a>
+          <a href="mailto:3299525690@qq.com" class="flex items-center border border-primary text-primary px-6 py-3 rounded-lg hover:bg-primary/5 hover:border-accent hover:text-accent transition">
+            <i class="fas fa-envelope mr-2"></i> 发邮件
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="w-64 h-64 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border-4 border-white shadow-xl">
+          <img src="https://picsum.photos/300/300?random=1" alt="贺佳照片" class="w-56 h-56 rounded-full object-cover border-2 border-primary/30">
+        </div>
+      </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="py-12 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center relative">
+        <span class="relative z-10">关于我</span>
+        <span class="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary to-secondary"></span>
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-4 flex items-center text-primary">
+            <i class="fas fa-user-circle mr-3 text-accent"></i> 基本信息
+          </h3>
+          <div class="space-y-3">
+            <div class="flex items-start">
+              <i class="fas fa-calendar-alt text-primary mt-1 mr-3"></i>
+              <span>20岁 | 广东深圳市</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-phone text-primary mt-1 mr-3"></i>
+              <span>+86 18193469845</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+              <span>3299525690@qq.com</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-graduation-cap text-primary mt-1 mr-3"></i>
+              <span>深圳职业技术大学 | 通信软件技术</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-4 flex items-center text-secondary">
+            <i class="fas fa-star mr-3 text-accent"></i> 个人优势
+          </h3>
+          <ul class="space-y-3">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-success mt-1 mr-3"></i>
+              <span>学习能力强，能快速掌握新知识</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-success mt-1 mr-3"></i>
+              <span>沟通表达清晰，擅长团队协作</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-success mt-1 mr-3"></i>
+              <span>抗压性强，适应多变环境</span>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-success mt-1 mr-3"></i>
+              <span>实践经验丰富，执行效率高</span>
+            </li>
+          </ul>
+          <p class="mt-6 text-gray-600 italic border-l-4 border-accent pl-4">
+            "最好的状态不是等待成功，而是勇敢追求，积极进取，永远保持正能量。"
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education" class="py-12 bg-gray-50 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        <span class="text-secondary">教育</span> 背景
+      </h2>
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow-sm mb-6 transform hover:-translate-y-1 transition">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+            <div>
+              <h3 class="text-xl font-semibold text-primary">深圳职业技术大学</h3>
+              <p class="text-gray-600">通信软件技术 | 2023.09 - 至今（就读中）</p>
+            </div>
+            <span class="bg-primary/10 text-primary px-4 py-1 rounded-full text-sm font-medium">本科</span>
+          </div>
+          <h4 class="text-lg font-medium mt-4 mb-2 text-secondary">主修课程</h4>
+          <p class="text-gray-700">
+            Web程序设计、Python、C语言、Java编程基础、数据库管理(MySQL)、Linux操作系统、数据通信技术、数据存储技术、移动通信、通信技术原理与应用、移动网优网规、工科应用数学、线性代数与概率论等
+          </p>
+        </div>
+        <h3 class="text-xl font-semibold mb-4 mt-8 text-accent">获奖经历</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-primary">
+            <p class="font-medium">发现深圳之美演讲比赛</p>
+            <p class="text-sm text-gray-600">校级一等奖</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-secondary">
+            <p class="font-medium">大学生讲思政课</p>
+            <p class="text-sm text-gray-600">校级优秀奖</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-accent">
+            <p class="font-medium">最美笔记</p>
+            <p class="text-sm text-gray-600">校级一等奖</p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-success">
+            <p class="font-medium">军训先进个人</p>
+            <p class="text-sm text-gray-600"></p>
+          </div>
+          <div class="bg-white p-4 rounded-lg shadow-sm hover:shadow-md transition border-l-4 border-primary">
+            <p class="font-medium">PPT设计</p>
+            <p class="text-sm text-gray-600">二等奖</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 技能特长 -->
+    <section id="skills" class="py-12 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        <span class="text-accent">技能</span> 特长
+      </h2>
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-6 text-secondary">专业技能</h3>
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">沟通能力</span>
+                <span class="text-primary">60%</span>
+              </div>
+              <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-primary rounded-full progress-animate" style="--width: 60%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">销售能力</span>
+                <span class="text-success">50%</span>
+              </div>
+              <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-success rounded-full progress-animate" style="--width: 50%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">金融知识</span>
+                <span class="text-secondary">80%</span>
+              </div>
+              <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-secondary rounded-full progress-animate" style="--width: 80%"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="font-medium">组织能力</span>
+                <span class="text-accent">55%</span>
+              </div>
+              <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div class="h-full bg-accent rounded-full progress-animate" style="--width: 55%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+          <h3 class="text-xl font-semibold mb-6 text-primary">实用技能</h3>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="bg-primary/5 p-3 rounded-lg shadow-sm text-center hover:bg-primary/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-file-alt text-primary text-xl mb-2"></i>
+              <p>推文制作</p>
+            </div>
+            <div class="bg-secondary/5 p-3 rounded-lg shadow-sm text-center hover:bg-secondary/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-file-powerpoint text-secondary text-xl mb-2"></i>
+              <p>PPT设计</p>
+            </div>
+            <div class="bg-accent/5 p-3 rounded-lg shadow-sm text-center hover:bg-accent/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-table text-accent text-xl mb-2"></i>
+              <p>Excel数据处理</p>
+            </div>
+            <div class="bg-success/5 p-3 rounded-lg shadow-sm text-center hover:bg-success/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-image text-success text-xl mb-2"></i>
+              <p>海报设计</p>
+            </div>
+            <div class="bg-primary/5 p-3 rounded-lg shadow-sm text-center hover:bg-primary/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-envelope-open-text text-primary text-xl mb-2"></i>
+              <p>邀请函制作</p>
+            </div>
+            <div class="bg-secondary/5 p-3 rounded-lg shadow-sm text-center hover:bg-secondary/10 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-terminal text-secondary text-xl mb-2"></i>
+              <p>OpenEuler基础操作</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="py-12 bg-gray-50 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        <span class="text-primary">实践</span> 经历
+      </h2>
+      <div class="max-w-4xl mx-auto">
+        <h3 class="text-xl font-semibold mb-6 text-secondary">校园经历</h3>
+        <div class="relative pl-8">
+          <div class="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary"></div>
+          <div class="relative pb-6">
+            <div class="absolute left-[-25px] top-0 bg-primary text-white w-6 h-6 rounded-full flex items-center justify-center">
+              <i class="fas fa-graduation-cap text-xs"></i>
+            </div>
+            <h4 class="font-semibold text-lg text-accent">学生干部经历</h4>
+            <p class="text-gray-600 mb-2">担任年级委员、通信学会副会长、学习部骨干、班级学习委员、安全宣讲团主要成员</p>
+            <p class="text-gray-700">组织多项校园活动，提升团队协作与组织管理能力</p>
+          </div>
+          <div class="relative pb-6">
+            <div class="absolute left-[-25px] top-0 bg-secondary text-white w-6 h-6 rounded-full flex items-center justify-center">
+              <i class="fas fa-trophy text-xs"></i>
+            </div>
+            <h4 class="font-semibold text-lg text-accent">学术竞赛与实践</h4>
+            <p class="text-gray-600 mb-2">参与信创杯、互联网+、志愿服务等学术竞赛与实践活动</p>
+            <p class="text-gray-700">积累丰富的团队协作经验，锻炼问题解决能力</p>
+          </div>
+        </div>
+        
+        <h3 class="text-xl font-semibold mb-6 mt-8 text-accent">工作经历</h3>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-semibold text-lg text-primary">校外教育机构 | 兼职辅导老师</h4>
+              <span class="text-gray-600">2024.07 - 至今</span>
+            </div>
+            <p class="text-gray-700">
+              负责语数英学科辅导，针对学生特点设计个性化教学方案，帮助多名学生提升学习成绩15%-30%
+            </p>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition transform hover:-translate-y-1">
+            <div class="flex justify-between items-start mb-3">
+              <h4 class="font-semibold text-lg text-primary">摄影师助理</h4>
+              <span class="text-gray-600">2024.02 - 2024.06</span>
+            </div>
+            <p class="text-gray-700">
+              协助完成拍摄筹备、现场跟拍及后期素材整理工作，锻炼细节意识与执行力，参与完成10+场活动拍摄
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 兴趣爱好 -->
+    <section id="interests" class="py-12 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center">
+        <span class="text-secondary">兴趣</span> 爱好
+      </h2>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-5xl mx-auto">
+        <div class="bg-white p-4 rounded-xl shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+          <i class="fas fa-microphone text-primary text-2xl mb-2 group-hover:text-accent transition-colors"></i>
+          <p>演讲</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+          <i class="fas fa-file-powerpoint text-secondary text-2xl mb-2 group-hover:text-accent transition-colors"></i>
+          <p>PPT设计</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+          <i class="fas fa-hands-helping text-success text-2xl mb-2 group-hover:text-accent transition-colors"></i>
+          <p>志愿服务</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+          <i class="fas fa-camera text-accent text-2xl mb-2 group-hover:text-primary transition-colors"></i>
+          <p>摄影</p>
+        </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm text-center hover:shadow-lg transition transform hover:-translate-y-1 group">
+          <i class="fas fa-book text-primary text-2xl mb-2 group-hover:text-secondary transition-colors"></i>
+          <p>阅读</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 自我评价 -->
+    <section class="py-12 bg-gradient-to-br from-secondary/5 to-primary/5 fade-in">
+      <h2 class="text-3xl font-bold mb-8 text-center text-secondary">自我评价</h2>
+      <div class="max-w-3xl mx-auto bg-white p-8 rounded-2xl shadow-xl">
+        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+          具备较强学习能力与沟通表达力，能快速适应新环境并承担压力任务；工作严谨负责，注重团队协作，善于从实践中总结经验；期待在新岗位中持续成长，用专业技能创造价值。
+        </p>
+        <div class="border-t border-gray-200 mt-8 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <div class="mb-4 md:mb-0">
+            <p class="text-sm text-gray-500">贺佳</p>
+            <p class="text-xs text-gray-400">2025年6月</p>
+          </div>
+          <div class="flex space-x-4">
+            <a href="tel:+8618193469845" class="flex items-center bg-accent text-white px-4 py-2 rounded-lg hover:bg-accent/90 hover:shadow-md transition transform hover:-translate-y-1">
+              <i class="fas fa-phone-alt mr-2"></i> 联系我
+            </a>
+            <a href="mailto:3299525690@qq.com" class="flex items-center border border-primary text-primary px-4 py-2 rounded-lg hover:bg-primary/5 hover:border-accent hover:text-accent transition">
+              <i class="fas fa-envelope mr-2"></i> 发邮件
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-white py-8">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-4 md:mb-0">
+          <h3 class="text-xl font-bold text-white">贺佳</h3>
+          <p class="text-gray-400 text-sm">通信软件技术专业 | <span class="text-accent">积极进取的追梦者</span></p>
+        </div>
+        <div class="flex space-x-6">
+          <a href="tel:+8618193469845" class="text-gray-400 hover:text-accent transition">
+            <i class="fas fa-phone-alt text-lg"></i>
+          </a>
+          <a href="mailto:3299525690@qq.com" class="text-gray-400 hover:text-accent transition">
+            <i class="fas fa-envelope text-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-accent transition">
+            <i class="fas fa-github text-lg"></i>
+          </a>
+          <a href="#" class="text-gray-400 hover:text-accent transition">
+            <i class="fas fa-linkedin text-lg"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-500 text-sm">
+        <p>© 2025 贺佳个人主页. 保留所有权利.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2', 'shadow');
+        navbar.classList.remove('py-3');
+      } else {
+        navbar.classList.add('py-3');
+        navbar.classList.remove('py-2', 'shadow');
+      }
+    });
+    document.getElementById('menuBtn').addEventListener('click', function() {
+      const menu = document.getElementById('mobileMenu');
+      menu.classList.toggle('hidden');
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+          document.getElementById('mobileMenu').classList.add('hidden');
+        }
+      });
+    });
+    const fadeElements = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(element => {
+      element.style.opacity = 0;
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.8s ease-in-out, transform 0.8s ease-in-out';
+      observer.observe(element);
+    });
+  </script>
+</body>
+</html>
